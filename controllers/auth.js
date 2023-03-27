@@ -36,6 +36,7 @@ export const login = async (req, res) => {
     delete user.password;
 
     res
+      .setHeader("Set-Cookie", token)
       .cookie("token", token, {
         httpOnly: true,
       })
@@ -53,4 +54,4 @@ export const logout = async (req, res) => {
     console.log(error);
     res.status(500).json(error);
   }
-}
+};

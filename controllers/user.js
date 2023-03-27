@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 // GET
 export const getUser = async (req, res) => {
   try {
-    let { token } = req.cookies;
+    let token = req.headers["Set-cookie"];
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET, {}, async (err, user) => {
         if (err) {
