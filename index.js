@@ -19,7 +19,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(cookieParser());
+app.use(cookieParser("session", { sameSite: "none", secure: false }));
 
 // WELCOME
 app.get("/", (req, res) => {
