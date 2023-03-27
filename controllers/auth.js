@@ -39,7 +39,7 @@ export const login = async (req, res) => {
       .setHeader("Set-Cookie", token)
       .cookie("token", token, {
         httpOnly: true,
-        domain: "http://localhost:3000/",
+        domain: "localhost",
       })
       .status(200)
       .json(user);
